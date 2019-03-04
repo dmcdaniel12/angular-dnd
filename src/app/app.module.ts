@@ -8,6 +8,7 @@ import { MonstersComponent } from './components/monsters/monsters.component';
 import { SpellsComponent } from './components/spells/spells.component';
 import { MonstersService } from './services/monsters.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {SpellsService} from './services/spells.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     HttpClientModule,
   ],
   providers: [
-    MonstersService
+    MonstersService,
+    SpellsService,
   ],
   bootstrap: [AppComponent]
 })

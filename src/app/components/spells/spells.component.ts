@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SpellsService} from '../../services/spells.service';
 
 @Component({
   selector: 'app-spells',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpellsComponent implements OnInit {
 
-  constructor() { }
+  private spells: Object;
+
+  constructor(private spellsService: SpellsService) { }
 
   ngOnInit() {
+    this.spellsService.getAllSpells().subscribe(data => {this.spells = data; console.log(data); });
+
   }
 
 }
