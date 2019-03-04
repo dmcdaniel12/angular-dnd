@@ -1,7 +1,8 @@
-import {OnDestroy} from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import {Subject} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
+@Injectable()
 export class MonstersService implements OnDestroy {
 
   public destroy$ = new Subject<any>();
@@ -14,11 +15,10 @@ export class MonstersService implements OnDestroy {
     })
   };
 
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient) {  console.log('test123')}
 
   ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
+
   }
 
   public getAllMonsters() {
