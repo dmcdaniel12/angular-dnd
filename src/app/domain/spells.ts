@@ -3,3 +3,8 @@ export class Spells {
   public id: string;
   public url: string;
 }
+
+export class SpellsObject {
+  public count: string;
+  public results: Spells[];
+}
