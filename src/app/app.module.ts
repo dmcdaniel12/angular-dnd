@@ -7,8 +7,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MonstersComponent } from './components/monsters/monsters.component';
 import { SpellsComponent } from './components/spells/spells.component';
 import { MonstersService } from './services/monsters.service';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {SpellsService} from './services/spells.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SpellsService } from './services/spells.service';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {SpellsService} from './services/spells.service';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    NgxDatatableModule
   ],
   providers: [
     MonstersService,
