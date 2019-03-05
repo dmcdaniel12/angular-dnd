@@ -8,26 +8,26 @@
     <div class="row">
 
       <div class="col-md-4">
-        <p>Page: {{ spell.page }}</p>
-        <p>Range: {{ spell.range }}</p>
+        <p><strong>Page:</strong> {{ spell.page }}</p>
+        <p><strong>Range:</strong> {{ spell.range }}</p>
       </div>
 
       <div class="col-md-4">
-        <p>Components: {{ spell.components }}</p>
-        <p>Materials: {{ spell.material }}</p>
-        <p>Ritual: {{ spell.ritual }}</p>
-        <p>Duration: {{ spell.duration }}</p>
-        <p>Concentration: {{ spell.concentration }}</p>
-        <p>Casting Time: {{ spell.casting_time }}</p>
+        <p><strong>Components:</strong> {{ spell.components }}</p>
+        <p><strong>Materials:</strong> {{ spell.material }}</p>
+        <p><strong>Ritual:</strong> {{ spell.ritual }}</p>
+        <p><strong>Duration:</strong> {{ spell.duration }}</p>
+        <p><strong>Concentration:</strong> {{ spell.concentration }}</p>
+        <p><strong>Casting Time:</strong> {{ spell.casting_time }}</p>
       </div>
 
       <div class="col-md-4">
-        <p>School: {{ spell.school.name }}</p>
+        <p><strong>School:</strong> {{ spell.school.name }}</p>
         <p *ngFor="let class of spell.classes; index as i;">
-          Class: {{ class.name }}
+          <strong>Class:</strong> {{ class.name }}
         </p>
         <p *ngFor="let subclass of spell.subclasses; index as i;">
-          Sub-Class: {{ subclass.name }}
+          <strong>Sub-Class:</strong> {{ subclass.name }}
         </p>
       </div>
     </div>
@@ -35,7 +35,7 @@
     <div class="row">
 
       <div class="col-md-12">
-        <p>Url: {{ spell.url }}</p>
+        <p><strong>Url:</strong> {{ spell.url }}</p>
       </div>
 
     </div>
