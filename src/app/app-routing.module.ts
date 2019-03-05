@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SpellsComponent } from './components/spells/spells.component';
 import { ClassesComponent } from './components/classes/classes.component';
 import { SpellComponent } from './components/spell/spell.component';
+import { MonsterComponent } from './components/monster/monster.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'monsters',
     component: MonstersComponent,
+  },
+  {
+    path: 'monster/:id',
+    component: MonsterComponent,
   },
   {
     path: 'spells',

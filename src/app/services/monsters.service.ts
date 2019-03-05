@@ -28,4 +28,10 @@ export class MonstersService implements OnDestroy {
     return this.http.get<Monsters>(url, this.options);
   }
 
+  public getMonster(id: number) {
+    const url = this.baseUrl + this.apiEndpoint + '/' + id;
+
+    return this.http.get<Monster>(url, this.options);
+  }
+
 }

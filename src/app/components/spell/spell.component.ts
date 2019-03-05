@@ -17,6 +17,7 @@ export class SpellComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
+
     this.activatedRoute.params
       .subscribe(params => {
         if (params.id) {

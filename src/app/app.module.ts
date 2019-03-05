@@ -13,6 +13,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ClassesComponent } from './components/classes/classes.component';
 import {ClassesService} from './services/classes.service';
 import { SpellComponent } from './components/spell/spell.component';
+import { MonsterComponent } from './components/monster/monster.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SpellComponent } from './components/spell/spell.component';
     SpellsComponent,
     ClassesComponent,
     SpellComponent,
+    MonsterComponent,
   ],
   imports: [
     BrowserModule,
