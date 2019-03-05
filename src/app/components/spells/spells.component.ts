@@ -10,7 +10,7 @@ import {Spell, SpellsObject} from '../../domain/spells';
 })
 export class SpellsComponent implements OnInit, OnDestroy {
 
-  public spells: Object;
+  public spells: SpellsObject;
   public spell: Spell;
   private destroy$: any;
 
@@ -19,7 +19,7 @@ export class SpellsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.spellsService.getAllSpells()
       .subscribe(data => {
-      this.spells = data.results;
+      this.spells = data;
     });
 
     // this.spellsService.getSpellById(1)

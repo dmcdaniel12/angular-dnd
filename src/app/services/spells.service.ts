@@ -25,7 +25,7 @@ export class SpellsService implements OnDestroy {
   public getAllSpells() {
     const url = this.baseUrl + this.apiEndpoint;
 
-    return this.http.get<SpellsObject[]>(url, this.options);
+    return this.http.get<SpellsObject>(url, this.options);
   }
 
   public getSpellById(id) {

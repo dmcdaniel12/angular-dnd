@@ -1,3 +1,46 @@
-<p *ngIf="spell">
-  {{ spell.page | uppercase }}
-</p>
+<div class="container">
+
+  <div class="col-md-12" *ngIf="spell">
+      <h2>{{ spell.name }}</h2>
+      <p>{{ spell.desc }}</p>
+      <p>{{ spell.higher_level }}</p>
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <p>Page: {{ spell.page }}</p>
+        <p>Range: {{ spell.range }}</p>
+      </div>
+
+      <div class="col-md-4">
+        <p>Components: {{ spell.components }}</p>
+        <p>Materials: {{ spell.material }}</p>
+        <p>Ritual: {{ spell.ritual }}</p>
+        <p>Duration: {{ spell.duration }}</p>
+        <p>Concentration: {{ spell.concentration }}</p>
+        <p>Casting Time: {{ spell.casting_time }}</p>
+      </div>
+
+      <div class="col-md-4">
+        <p>School: {{ spell.school.name }}</p>
+        <p *ngFor="let class of spell.classes; index as i;">
+          Class: {{ class.name }}
+        </p>
+        <p *ngFor="let subclass of spell.subclasses; index as i;">
+          Sub-Class: {{ subclass.name }}
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <p>Url: {{ spell.url }}</p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

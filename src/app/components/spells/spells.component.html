@@ -10,12 +10,12 @@
                  [limit]="10"
                  [rowHeight]="'auto'"
                  [reorderable]="reorderable"
-                 [rows]="spells"
+                 [rows]="spells.results"
   >
 
     <ngx-datatable-column name="Name" [sortable]="false" [resizeable]="false" [draggable]="false">
-      <ng-template ngx-datatable-cell-template let-row="row">
-        {{ row.name }}
+      <ng-template ngx-datatable-cell-template let-row="row" let-rowIndex="rowIndex">
+        <a routerLink="/spell/{{rowIndex + 1}}">{{ row.name }}</a>
       </ng-template>
     </ngx-datatable-column>
 

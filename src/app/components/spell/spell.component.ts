@@ -17,8 +17,6 @@ export class SpellComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    console.log('Hit the spell');
-
     this.activatedRoute.params
       .subscribe(params => {
         if (params.id) {
@@ -32,9 +30,9 @@ export class SpellComponent implements OnInit {
   }
 
   ngOnInit() {
-  console.log('test')
     this.spellsService.getSpellById(this.id)
       .subscribe(data => {
+          console.log(data);
           this.spell = data;
         }
       );
