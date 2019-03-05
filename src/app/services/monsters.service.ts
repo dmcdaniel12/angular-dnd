@@ -1,12 +1,13 @@
 import {Injectable, OnDestroy} from '@angular/core';
 import {Subject} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Monsters} from '../domain/monsters';
 
 @Injectable()
 export class MonstersService implements OnDestroy {
 
   public destroy$ = new Subject<any>();
-  public baseUrl = 'https://open5e.com/';
+  public baseUrl = 'http://www.dnd5eapi.co/api/';
   public apiEndpoint = 'monsters';
 
   private options = {
@@ -15,7 +16,7 @@ export class MonstersService implements OnDestroy {
     })
   };
 
-  constructor(private http: HttpClient) {  console.log('test123')}
+  constructor(private http: HttpClient) { }
 
   ngOnDestroy() {
 
@@ -24,7 +25,7 @@ export class MonstersService implements OnDestroy {
   public getAllMonsters() {
     const url = this.baseUrl + this.apiEndpoint;
 
-    return this.http.get(url, this.options);
+    return this.http.get<Monsters>(url, this.options);
   }
 
 }
