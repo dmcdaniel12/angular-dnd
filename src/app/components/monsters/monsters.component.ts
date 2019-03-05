@@ -11,7 +11,7 @@ export class MonstersComponent implements OnInit, OnDestroy {
   constructor (private monsterService: MonstersService) {  }
 
   ngOnInit(): void {
-    this.monsterService.getAllMonsters().subscribe();
+    // this.monsterService.getAllMonsters().subscribe();
   }
 
   ngOnDestroy(): void {

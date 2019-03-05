@@ -1,7 +1,7 @@
 <div>
 
   <ngx-datatable class="bootstrap"
-                 *ngIf="spells"
+                 *ngIf="classes"
                  [columnMode]="'force'"
                  [headerHeight]="40"
                  [summaryRow]="true"
@@ -10,7 +10,7 @@
                  [limit]="10"
                  [rowHeight]="'auto'"
                  [reorderable]="reorderable"
-                 [rows]="spells"
+                 [rows]="classes"
   >
 
     <ngx-datatable-column name="Name" [sortable]="false" [resizeable]="false" [draggable]="false">
@@ -22,14 +22,3 @@
   </ngx-datatable>
 
 </div>
-
-<!--<div class="data" *ngIf="spell">-->
-
-
-  <!--<p>-->
-    <!--{{ this.spell.name }}-->
-  <!--</p>-->
-
-  <!--<p>{{ this.spell.range }}</p>-->
-
-<!--</div>-->

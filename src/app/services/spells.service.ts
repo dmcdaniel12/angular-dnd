@@ -1,7 +1,7 @@
 import {Injectable, OnDestroy} from '@angular/core';
 import {Subject} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {SpellsObject} from '../domain/spells';
+import {Spell, SpellsObject} from '../domain/spells';
 
 @Injectable()
 export class SpellsService implements OnDestroy {
@@ -26,6 +26,12 @@ export class SpellsService implements OnDestroy {
     const url = this.baseUrl + this.apiEndpoint;
 
     return this.http.get<SpellsObject[]>(url, this.options);
+  }
+
+  public getSpellById(id) {
+    const url = this.baseUrl + this.apiEndpoint + '/' + id;
+
+    return this.http.get<Spell>(url, this.options);
   }
 
 }

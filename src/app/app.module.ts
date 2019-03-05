@@ -10,12 +10,17 @@ import { MonstersService } from './services/monsters.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SpellsService } from './services/spells.service';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ClassesComponent } from './components/classes/classes.component';
+import {ClassesService} from './services/classes.service';
+import { SpellComponent } from './components/spell/spell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MonstersComponent,
     SpellsComponent,
+    ClassesComponent,
+    SpellComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +32,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
   providers: [
     MonstersService,
     SpellsService,
+    ClassesService,
   ],
   bootstrap: [AppComponent]
 })
