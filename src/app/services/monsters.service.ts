@@ -1,7 +1,7 @@
 import {Injectable, OnDestroy} from '@angular/core';
 import {Subject} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Monsters} from '../domain/monsters';
+import {Monster, Monsters} from '../domain/monsters';
 
 @Injectable()
 export class MonstersService implements OnDestroy {
