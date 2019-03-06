@@ -10,7 +10,7 @@ export class Monster {
     size: string;
     type: string;
     subtype: string;
-    aligntment: string;
+    alignment: string;
     armor_class: number;
     hit_points: number;
     hit_dice: string;
@@ -19,10 +19,14 @@ export class Monster {
     dexterity: number;
     constitution: number;
     intelligence: number;
-    wisdowm: number;
+    wisdom: number;
+    charisma: number;
+    strength_save: number;
+    dexterity_save: number;
     constitution_save: number;
     intelligence_save: number;
     wisdom_save: number;
+    charisma_save: number;
     history: number;
     perception: number;
     damage_vulnerabilities: string;

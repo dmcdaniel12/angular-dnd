@@ -1,22 +1,98 @@
 <div class="container">
 
-  <div class="col-md-12" *ngIf="monster">
+  <div class="col-md-6" *ngIf="monster">
     <h2>{{ monster.name }}</h2>
-    <p>{{ monster.desc }}</p>
 
     <div class="row">
 
-      <div class="col-md-4">
+      <div class="col-md-12">
+        {{ monster.size }} {{ monster.type }} {{ monster.alignment }}
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">AC: {{monster.armor_class}}</div>
+      <div class="col-md-6">HP: {{monster.hit_points}} ({{monster.hit_dice}})</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">Speed: {{monster.speed}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">STR</div>
+      <div class="col-md-2">DEX</div>
+      <div class="col-md-2">CON</div>
+      <div class="col-md-2">INT</div>
+      <div class="col-md-2">WIS</div>
+      <div class="col-md-2">CHA</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">{{monster.strength}}</div>
+      <div class="col-md-2">{{monster.dexterity}}</div>
+      <div class="col-md-2">{{monster.constitution}}</div>
+      <div class="col-md-2">{{monster.intelligence}}</div>
+      <div class="col-md-2">{{monster.wisdom}}</div>
+      <div class="col-md-2">{{monster.charisma}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <p>
+        Saving Throws:
+        STR: {{monster.strength_save}}
+        DEX: {{monster.dexterity_save}}
+        CON: {{monster.constitution_save}}
+        INT: {{monster.intelligence_save}}
+        WIS: {{monster.wisdom_save}}
+        CHA: {{monster.charisma_save}}
+        </p>
+
+        <p>
+          Skills: {{monster.perception}}
+        </p>
+
+        <p>
+          Damage Resistance: {{ monster.damage_resistances}}
+        </p>
+
+        <p>
+          Condition Immunities: {{ monster.condition_immunities}}
+        </p>
+
+        <p>
+          Senses: {{ monster.senses}}
+        </p>
+
+        <p>
+          Languages: {{monster.languages}}
+        </p>
+
+        <p *ngFor="let sa of monster.special_abilities; index as i;">
+          <strong>{{ sa.name }}</strong> - <strong>Attack Bonus:</strong> {{ sa.attack_bonus }} <br /><br />
+            <strong>Desc:</strong> {{ sa.desc}}
+        </p>
+
 
       </div>
 
-      <div class="col-md-4">
+    </div>
 
-      </div>
+  </div>
 
-      <div class="col-md-4">
+  <div class="col-md-6">
 
-      </div>
+    <div class="row">
+      <p *ngFor="let action of monster.actions; index as i;">
+        <strong>{{ action.name }}</strong> -
+        <span *ngIf="action.attack_bonus"><strong>Attack Bonus:</strong> {{ action.attack_bonus }} <br /><br /></span>
+        <span *ngIf="action.damage_bonus"><strong>Damage bonus: </strong> {{action.damage_bonus}}</span> - 
+        <span *ngIf="action.damage_dice"><strong>Damage Dice: </strong> {{action.damage_dice}} <br /><br /></span>
+        <strong>Desc:</strong> {{ action.desc}}
+      </p>
     </div>
 
   </div>
